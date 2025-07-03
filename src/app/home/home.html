@@ -1,1 +1,23 @@
 <p>home works!</p>
+
+<!-- Click Evenet -->
+<button (click)="hundleEvent($event)" name="submit-name" class="submit-class">Click Event</button>
+
+
+<!-- Mouserenter Event -->
+<br/><br/>
+<div (mouseenter)="mouseenterEvent($event)" class="Demo" id="main" style="background-color: green; padding: 100px; width: 150px;">
+</div><br/>
+
+
+<!-- MouserLevae Event -->
+<br/><br/>
+<div (mouseleave)="mouseleveEvent($event)" class="Demo2" id="mainlevae" style="background-color: rgb(128, 0, 0); padding: 100px; width: 150px;">
+</div><br/>
+
+<!-- Imput Event -->
+<input type="text" name="fname" id="fname" (input)="inputfunction($event)" />
+<br/><br/>
+
+<!-- focus Event and Blur -->
+<input type="text" name="fname" class="myclass" id="fname" (blur)="blurfunction($event)" (focus)="focusfunction($event)" />
