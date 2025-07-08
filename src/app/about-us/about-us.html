@@ -1,1 +1,27 @@
-<p>about-us works!</p>
+
+
+<div *ngIf="users.length > 0; else noUsers">
+  <h2 class="text-center">Blog</h2>
+  <section class="blog-section">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let user of users">
+              <div class="blog-card">
+              <a [href]='user.link' target="_blank"><div [innerHTML]="user.title.rendered"></div></a>
+              <!-- <div [innerHTML]="user.content.rendered"></div> -->
+              <div [innerHTML]="user.excerpt.rendered"></div>
+              <!-- <p>{{user.date | date:'mediumDate'}}</p>
+              <p>{{user.date | date:'fullDate'}}</p>
+                <p>{{user.date | date:'dd/MM/yyyy'}}</p> -->
+                <p>{{user.date | date:'MMM d, y, h:mm a'}}</p>
+              <a [href]='user.link' target="_blank">Read More</a>
+                  <!-- <pre>{{user | json}}</pre>  -->
+                   </div>
+    </div>
+  </div>
+  </section>
+
+</div>
+
+<ng-template #noUsers>
+  <p>No users found or loading...</p>
+</ng-template>
